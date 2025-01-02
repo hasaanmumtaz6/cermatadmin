@@ -1,0 +1,181 @@
+.Admin-detail-container {
+  @apply w-full h-full px-[2rem] py-[1.5rem] overflow-scroll overflow-x-hidden;
+}
+.Admin-detail-container::-webkit-scrollbar {
+  @apply w-0;
+}
+.admin-detail-box {
+  @apply flex items-center justify-center gap-[2rem] flex-wrap w-full;
+}
+.admin-detail-box-cards-container {
+  @apply w-[31%] h-full select-none flex items-center justify-center gap-[1rem] px-[3rem] py-[1rem] rounded-[0.75rem] shadow-lg shadow-gray-300 transition-all duration-700 hover:shadow-none text-[var(--foreground)];
+  background: linear-gradient(
+    110deg,
+    var(--background-primary),
+    var(--background-secondry)
+  );
+}
+.admin-detail-box-cards-container svg {
+  @apply text-[6rem];
+}
+.admin-detail-box-cards-container h3 {
+  @apply font-bold text-5xl;
+}
+.admin-detail-box-cards-container p {
+  @apply text-[1rem] text-[var(--text-color-secondry)] font-semibold;
+}
+
+/* product-list */
+.product-List {
+  @apply w-full pt-[6rem] border-b-[2px] border-gray-300 pb-[2rem] flex items-center gap-[4rem] justify-between;
+}
+.product-card-box {
+  @apply relative w-[413px] h-[184px] rounded-[2.5rem];
+}
+.product-content-container {
+  @apply flex items-end relative w-full h-full;
+}
+.product-pic-box {
+  @apply absolute top-[-8rem] flex items-end justify-end -left-4;
+}
+.product-440-pic-box {
+  @apply top-[-8rem] -left-4 h-[450px];
+}
+.product-L440-pic-box {
+  @apply top-[0.75rem] -left-[4rem];
+}
+.product-content-box {
+  @apply w-[253px] h-[140px] absolute bottom-[-12rem] right-0;
+}
+.product-content-box h3 {
+  @apply text-[1.375rem] font-bold w-full;
+}
+.product-content-box p {
+  @apply text-[0.875rem];
+}
+.editingbadges {
+  @apply flex items-center gap-[1.5rem] w-fit text-[2rem] bg-transparent rounded-full px-[1.5rem] py-[0.5rem] absolute right-2 top-2;
+}
+.editingbadges svg {
+  @apply cursor-pointer;
+}
+.section-title {
+  @apply mb-20 text-[2.5rem] font-bold;
+}
+
+@media (max-width: 1600px) and (min-width: 1537px) {
+  .editingbadges {
+    @apply text-[1.25rem];
+  }
+  .product-List {
+    @apply gap-[3rem];
+  }
+}
+@media (max-width: 1536px) and (min-width: 1441px) {
+  .editingbadges {
+    @apply text-[1.125rem];
+  }
+  .product-List {
+    @apply gap-[2rem];
+  }
+  .product-440-pic-box {
+    @apply -left-[2rem];
+  }
+  .product-content-box {
+    @apply -right-[1rem];
+  }
+}
+@media (max-width: 1440px) and (min-width: 1367px) {
+  .editingbadges {
+    @apply text-[1.125rem];
+  }
+  .product-List {
+    @apply gap-[2rem];
+  }
+  .product-440-pic-box {
+    @apply -left-[2rem];
+  }
+  .product-content-box {
+    @apply -right-[1rem];
+  }
+}
+@media (max-width: 1366px) and (min-width: 1281px) {
+  .admin-detail-box-cards-container {
+    @apply gap-[0.75rem];
+  }
+  .admin-detail-box-cards-container svg {
+    @apply text-[4rem];
+  }
+  .admin-detail-box-cards-container h3 {
+    @apply text-[2rem];
+  }
+  .admin-detail-box-cards-container p {
+    @apply text-[0.75rem];
+  }
+  .editingbadges {
+    @apply text-[1.125rem];
+  }
+  .product-List {
+    @apply gap-[2rem];
+  }
+  .product-440-pic-box {
+    @apply -left-[2rem] h-[361px] -top-[4rem];
+  }
+  .product-440-pic-box img {
+    @apply w-full h-full;
+  }
+  .product-content-box {
+    @apply -right-[1.5rem];
+  }
+}
+@media (max-width: 1280px) and (min-width: 1181px) {
+  .admin-detail-box {
+    @apply gap-[1rem];
+  }
+  .admin-detail-box-cards-container {
+    @apply gap-[0.75rem];
+  }
+  .admin-detail-box-cards-container svg {
+    @apply text-[4rem];
+  }
+  .admin-detail-box-cards-container h3 {
+    @apply text-[2rem];
+  }
+  .admin-detail-box-cards-container p {
+    @apply text-[0.75rem];
+  }
+  .section-title {
+    @apply mb-[2rem];
+  }
+  .editingbadges {
+    @apply text-[1.125rem];
+  }
+  .product-List {
+    @apply gap-[1.5rem];
+  }
+  .product-440-pic-box {
+    @apply -left-[2rem] h-[341px] -top-[4rem];
+  }
+  .product-440-pic-box img {
+    @apply w-full h-full;
+  }
+  .product-content-box {
+    @apply -right-[1.75rem];
+  }
+}
+
+/* 
+screen sizez
+1920 x 1080 = 20px
+1820 x 1080 = 19px
+1720 x 1050 = 18px
+1600 x 900 = 17px
+1536 x 864 = 17px
+1440 x 900 = 16px
+1366 x 768 = 16px
+1280 x 720 = 16px
+1180 x 720 = 16px
+980 x 640 = 15px
+880 x 600 = 14px
+680 x 580 = 14px
+*/

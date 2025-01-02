@@ -2,20 +2,252 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  @apply p-0 m-0 box-border;
+}
+html,
+body {
+  @apply w-full h-full;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background-primary: #999999;
+  --background-secondry: #ececec;
+  --background-tertiary: #dfdfdf;
+  --background-fourth: #3f3f3f;
+  --text-color-primary: #000;
+  --text-color-secondry: #3f3f3f;
+  --text-color-tertiary: #dfdfdf;
+  --text-color-fourth: #ececec;
+  --foreground: #202020;
+}
+
+.admin-layout-box {
+  @apply relative flex items-start justify-start w-full overflow-hidden h-screen;
+}
+.main-body {
+  @apply w-[80%] h-screen overflow-hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  @apply w-[20%] relative text-[#000] overflow-scroll overflow-x-hidden h-full pt-[1.5rem] flex flex-col items-start justify-between gap-[1rem];
+  background: linear-gradient(
+    110deg,
+    var(--background-primary),
+    var(--background-secondry)
+  );
+}
+.profile-tabs-box {
+  @apply flex items-start gap-[4rem] justify-between w-full flex-col;
+}
+.profile-box {
+  @apply flex items-center gap-[1rem] justify-start px-[2rem] select-none;
+}
+.profile-box .profile-pic-box {
+  @apply w-[6rem] h-[6rem] p-[0.5rem] border-[2px] border-gray-600 rounded-full;
+}
+.profile-pic-box img {
+  @apply w-full h-full rounded-full;
+}
+.profile-user-about {
+  @apply flex flex-col items-start justify-center;
+}
+.profile-user-about h2 {
+  @apply font-bold text-[2rem];
+}
+.profile-user-about p {
+  @apply text-[1rem];
+}
+.sidebar::-webkit-scrollbar,
+.tabs-sidebar-admin::-webkit-scrollbar {
+  @apply w-0;
+}
+.tabs-sidebar-admin {
+  @apply flex flex-col gap-[0.75rem] items-start justify-start text-[2rem] w-full px-[2rem] overflow-scroll overflow-x-hidden;
+}
+.tabs-sidebar-admin .tab-link {
+  @apply flex gap-[1.25rem] items-center justify-start w-full px-[1.5rem] py-[0.5rem] rounded-full hover:text-[var(--text-color-secondry)] transition-all duration-700;
+}
+.tabs-sidebar-admin a b {
+  @apply font-normal;
+}
+.go-to-setting {
+  @apply flex items-center gap-[1rem] text-[2rem] w-full px-[3.5rem] py-[1rem] text-[var(--text-color-primary)];
+  background: linear-gradient(
+    120deg,
+    var(--background-primary),
+    var(--background-tertiary)
+  );
+}
+/* Sidebar */
+
+@media (max-width: 1820px) and (min-width: 1721px) {
+  .tabs-sidebar-admin .tab-link {
+    @apply gap-[1.5rem] px-[0.5rem] py-[0.5rem];
   }
 }
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@media (max-width: 1720px) and (min-width: 1601px) {
+  /* Sidebar */
+  .profile-box .profile-pic-box {
+    @apply w-[4rem] h-[4rem];
+  }
+  .profile-user-about h2 {
+    @apply text-[1.25rem];
+  }
+  .tabs-sidebar-admin {
+    @apply text-[1.25rem];
+  }
+  .tabs-sidebar-admin .tab-link {
+    @apply px-[0.5rem] py-[0.5rem];
+  }
+  .go-to-setting {
+    @apply text-[1.25rem];
+  }
+  /* Sidebar */
 }
+@media (max-width: 1600px) and (min-width: 1537px) {
+  /* Sidebar */
+  .profile-box .profile-pic-box {
+    @apply w-[4rem] h-[4rem];
+  }
+  .profile-user-about h2 {
+    @apply text-[1.25rem];
+  }
+  .tabs-sidebar-admin {
+    @apply text-[1.25rem];
+  }
+  .tabs-sidebar-admin .tab-link {
+    @apply px-[0.5rem] py-[0.5rem];
+  }
+  .go-to-setting {
+    @apply text-[1.25rem];
+  }
+  /* Sidebar */
+}
+@media (max-width: 1536px) and (min-width: 1441px) {
+  /* Sidebar */
+  .profile-box .profile-pic-box {
+    @apply w-[4rem] h-[4rem];
+  }
+  .profile-user-about h2 {
+    @apply text-[1.25rem];
+  }
+  .tabs-sidebar-admin {
+    @apply text-[1.25rem];
+  }
+  .tabs-sidebar-admin .tab-link {
+    @apply px-[0.5rem] py-[0.5rem];
+  }
+  .go-to-setting {
+    @apply text-[1.25rem];
+  }
+  /* Sidebar */
+}
+@media (max-width: 1440px) and (min-width: 1367px) {
+  /* Sidebar */
+  .profile-box .profile-pic-box {
+    @apply w-[4rem] h-[4rem];
+  }
+  .profile-user-about h2 {
+    @apply text-[1.25rem];
+  }
+  .tabs-sidebar-admin {
+    @apply text-[1.25rem];
+  }
+  .tabs-sidebar-admin .tab-link {
+    @apply px-[0.5rem] py-[0.5rem];
+  }
+  .go-to-setting {
+    @apply text-[1.25rem];
+  }
+  /* Sidebar */
+}
+@media (max-width: 1366px) and (min-width: 1281px) {
+  /* Sidebar */
+  .profile-box .profile-pic-box {
+    @apply w-[4rem] h-[4rem];
+  }
+  .profile-user-about h2 {
+    @apply text-[1.25rem];
+  }
+  .tabs-sidebar-admin {
+    @apply text-[1.25rem];
+  }
+  .tabs-sidebar-admin .tab-link {
+    @apply px-[0.5rem] py-[0.5rem];
+  }
+  .go-to-setting {
+    @apply text-[1.25rem];
+  }
+  /* Sidebar */
+}
+@media (max-width: 1280px) and (min-width: 1181px) {
+  /* Sidebar */
+  .profile-tabs-box {
+    @apply gap-[3rem];
+  }
+  .profile-box .profile-pic-box {
+    @apply w-[4rem] h-[4rem];
+  }
+  .profile-user-about h2 {
+    @apply text-[1rem];
+  }
+  .profile-user-about p {
+    @apply text-[0.75rem];
+  }
+  .tabs-sidebar-admin {
+    @apply text-[1rem] gap-[0.5rem];
+  }
+  .tabs-sidebar-admin .tab-link {
+    @apply px-[0.5rem] py-[0.5rem] gap-[0.75rem];
+  }
+  .go-to-setting {
+    @apply text-[1.25rem];
+  }
+  /* Sidebar */
+}
+@media (max-width: 1180px) and (min-width: 1081px) {
+  /* Sidebar */
+  .profile-tabs-box {
+    @apply gap-[3rem];
+  }
+  .profile-box {
+    @apply gap-[0.5rem];
+  }
+  .profile-box .profile-pic-box {
+    @apply w-[3.5rem] h-[3.5rem];
+  }
+  .profile-user-about h2 {
+    @apply text-[1rem];
+  }
+  .profile-user-about p {
+    @apply text-[0.75rem];
+  }
+  .tabs-sidebar-admin {
+    @apply text-[1rem] gap-[0.5rem];
+  }
+  .tabs-sidebar-admin .tab-link {
+    @apply px-[0.5rem] py-[0.5rem] gap-[0.75rem];
+  }
+  .go-to-setting {
+    @apply text-[1.25rem];
+  }
+  /* Sidebar */
+}
+
+/* 
+screen sizez
+1920 x 1080 = 20px
+1820 x 1080 = 19px
+1720 x 1050 = 18px
+1600 x 900 = 17px
+1536 x 864 = 17px
+1440 x 900 = 16px
+1366 x 768 = 16px
+1280 x 720 = 16px
+1180 x 720 = 16px
+980 x 640 = 15px
+880 x 600 = 14px
+680 x 580 = 14px
+*/
