@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Layout from "./components/Layout";
 import { AiFillProduct } from "react-icons/ai";
 import { FaIndustry, FaNewspaper, FaPencilAlt } from "react-icons/fa";
@@ -6,37 +7,21 @@ import { MdOutlineWork } from "react-icons/md";
 import { FaMessage } from "react-icons/fa6";
 import Image from "next/image";
 import { ImBin } from "react-icons/im";
-import product1 from "@/public/images/image 15.png";
-import product2 from "@/public/images/image 19.png";
-import product3 from "@/public/images/image 20.png";
 
 const Dashboard = () => {
-  const Product = [
-    {
-      imgHeight: product1.height,
-      imgURL: product1,
-      backgound: "E8D2B4",
-      productName: "Peanut Butter",
-      productDescription:
-        "For those who know. Creamy ice cream meets peanut butter perfection, topped with chocolate and a whole lot of crunch.",
-    },
-    {
-      imgHeight: product2.height,
-      imgURL: product2,
-      backgound: "E37885",
-      productName: "Sunny",
-      productDescription:
-        "Fun, playful, unforgettable. Three colors, three flavors, one sweet treat that never lets you down.",
-    },
-    {
-      imgHeight: product3.height,
-      imgURL: product3,
-      backgound: "BA3434",
-      productName: "Tropico Strawberry",
-      productDescription:
-        "Strawberry, but cooler. A vibrant burst of flavor frozen into the perfect summer escape. Refreshment? Delivered.",
-    }
-  ];
+  const [product, setProduct] = useState([]);
+  const [isError, setIsError] = useState<string>("");
+
+  useEffect(() => {
+    axios
+      .get("/api/products")
+      .then((res: any) => {
+        setProduct(res.data);
+      })
+      .catch((error:any) => {
+        setIsError(`Error fetching product profits:${error}`);
+      });
+  });
 
   return (
     <Layout title="Home - Cermat Admin">
@@ -84,20 +69,25 @@ const Dashboard = () => {
         </div>
 
         <h2 className="section-title">Product List</h2>
+        {isError&&<p>{isError}</p>}
         <div className="product-List">
-          {Product.map((product, index) => (
-            <div key={index} className="product-card-box" style={{background: `#${product.backgound}`}}>
+          {product.map((product:any, index:number) => (
+            <div
+              key={index}
+              className="product-card-box"
+              style={{ background: `${product.productBackground}` }}
+            >
               <div className="product-content-container">
                 <div
                   className={`product-pic-box product-${
-                    product.imgHeight >= 380 ? "440" : "L440"
+                    product.imageHeight >= 380 ? "440" : "L440"
                   }-pic-box`}
                 >
-                  <Image src={product.imgURL} alt={product.productName} />
+                  <Image src={product.productImage} alt={product.productNameEng} height={product.imageHeight} width={product.imageWidth} />
                 </div>
                 <span className="product-content-box">
-                  <h3>{product.productName}</h3>
-                  <p>{product.productDescription}</p>
+                  <h3>{product.productNameEng}</h3>
+                  <p>{product.productDescriptionEng}</p>
                 </span>
                 <div className="editingbadges">
                   <FaPencilAlt />
