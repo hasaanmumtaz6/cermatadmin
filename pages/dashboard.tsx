@@ -8,17 +8,26 @@ import { FaMessage } from "react-icons/fa6";
 import Image from "next/image";
 import { ImBin } from "react-icons/im";
 
+interface Product {
+  productBackground: string;
+  productImage: string;
+  productNameEng: string;
+  productDescriptionEng: string;
+  imageHeight: number;
+  imageWidth: number;
+}
+
 const Dashboard = () => {
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState<Product[]>([]);
   const [isError, setIsError] = useState<string>("");
 
   useEffect(() => {
     axios
-      .get("/api/products")
-      .then((res: any) => {
-        setProduct(res.data);
+      .get<Product[]>("/api/products")
+      .then((res) => {
+        setProduct(res?.data);
       })
-      .catch((error:any) => {
+      .catch((error:string) => {
         setIsError(`Error fetching product profits:${error}`);
       });
   });
@@ -75,19 +84,19 @@ const Dashboard = () => {
             <div
               key={index}
               className="product-card-box"
-              style={{ background: `${product.productBackground}` }}
+              style={{ background: `${product?.productBackground}` }}
             >
               <div className="product-content-container">
                 <div
                   className={`product-pic-box product-${
-                    product.imageHeight >= 380 ? "440" : "L440"
+                    product?.imageHeight >= 380 ? "440" : "L440"
                   }-pic-box`}
                 >
-                  <Image src={product.productImage} alt={product.productNameEng} height={product.imageHeight} width={product.imageWidth} />
+                  <Image src={product?.productImage} alt={product?.productNameEng} height={product?.imageHeight} width={product?.imageWidth} />
                 </div>
                 <span className="product-content-box">
-                  <h3>{product.productNameEng}</h3>
-                  <p>{product.productDescriptionEng}</p>
+                  <h3>{product?.productNameEng}</h3>
+                  <p>{product?.productDescriptionEng}</p>
                 </span>
                 <div className="editingbadges">
                   <FaPencilAlt />
