@@ -27,10 +27,10 @@
 
 /* product-list */
 .product-List {
-  @apply w-full pt-[6rem] border-b-[2px] border-gray-300 pb-[2rem] flex items-center gap-[4rem] justify-between;
+  @apply w-full pt-[6rem] pb-[2rem] flex flex-wrap items-center gap-[3rem] justify-between;
 }
 .product-card-box {
-  @apply relative w-[413px] h-[184px] rounded-[2.5rem];
+  @apply relative w-[413px] h-[184px] rounded-[2.5rem] my-[6rem];
 }
 .product-content-container {
   @apply flex items-end relative w-full h-full;
@@ -45,7 +45,7 @@
   @apply top-[-8rem] -left-4 h-[450px];
 }
 .product-L440-pic-box {
-  @apply top-[0.75rem] -left-[4rem];
+  @apply top-[0.75rem] -left-[4rem] h-[300px];
 }
 .product-L200-pic-box {
   @apply top-[0.75rem] -left-[4rem];

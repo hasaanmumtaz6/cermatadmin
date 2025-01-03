@@ -6,7 +6,7 @@ const ProductForm = () => {
   const [productNameEng, setProductNameEng] = useState("");
   const [productNameMK, setProductNameMk] = useState("");
   const [productNameRS, setProductNameRS] = useState("");
-  const [backgoundColor, setBackgoundColor] = useState("#fff");
+  const [backgoundColor, setBackgoundColor] = useState("#ececec");
   const [productDescriptionEng, setProductDescriptionEng] = useState("");
   const [productDescriptionMK, setProductDescriptionMk] = useState("");
   const [productDescriptionRS, setProductDescriptionRS] = useState("");

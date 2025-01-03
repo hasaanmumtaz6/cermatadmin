@@ -39,4 +39,23 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
     res.json(productListerDoc);
   }
 
+  if (method === "DELETE") {
+    const { productId } = req.query; 
+    if (!productId) {
+      return res.status(400).json({ message: "Product ID is required." });
+    }
+
+    try {
+      const result = await Product.findByIdAndDelete(productId);
+
+      if (!result) {
+        return res.status(404).json({ message: "Product not found." });
+      }
+
+      res.status(200).json({ message: "Product deleted successfully." });
+    } catch (error) {
+      res.status(500).json({ error: "Internal server error" });
+    }
+  }
+
 }
