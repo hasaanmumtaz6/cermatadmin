@@ -76,18 +76,18 @@ const FiltersForm = () => {
         acc[filter.filter][filter.filterCategory] = [];
       }
       if (filter.subfilterCategory) {
-        acc[filter.filter][filter.filterCategory].push(filter.subfilterCategory);
+        acc[filter.filter][filter.filterCategory].push(
+          filter.subfilterCategory
+        );
       }
       return acc;
     },
     {}
   );
 
-  const handleDelete = async (filterId:string) => {
+  const handleDelete = async (filterId: string) => {
     try {
-      const response = await axios.delete(
-        `/api/filter?filterId=${filterId}`
-      );
+      const response = await axios.delete(`/api/filter?filterId=${filterId}`);
 
       if (response.status === 200) {
         setTimeout(() => {
@@ -156,25 +156,33 @@ const FiltersForm = () => {
                       <strong>{category}</strong>
                     </h5>
                     <span className="subcategory-list flex flex-col items-start justify-start w-full gap-[1rem]">
-                      {groupedFilters[filterType][category].map((subCategory, index) => {
-                        const filterItem = filters?.find(
-                          (f) =>
-                            f.subfilterCategory === subCategory &&
-                            f.filterCategory === category
-                        );
+                      {groupedFilters[filterType][category].map(
+                        (subCategory, index) => {
+                          const filterItem = filters?.find(
+                            (f) =>
+                              f.subfilterCategory === subCategory &&
+                              f.filterCategory === category
+                          );
 
-                        return (
-                          <span
-                            key={index}
-                            className="flex items-center justify-between gap-[2rem] w-full border-[1px] border-gray-200 px-[1rem] py-[0.5rem] rounded-[0.5rem] ml-[1rem]"
-                          >
-                            <p className="subcategory-item text-[0.75rem]">
-                              {subCategory}
-                            </p>
-                            <ImBin className="text-2xl" onClick={() =>filterItem?._id && handleDelete(filterItem._id)} />
-                          </span>
-                        );
-                      })}
+                          return (
+                            <span
+                              key={index}
+                              className="flex items-center justify-between gap-[2rem] w-full border-[1px] border-gray-200 px-[1rem] py-[0.5rem] rounded-[0.5rem] ml-[1rem]"
+                            >
+                              <p className="subcategory-item text-[0.75rem]">
+                                {subCategory}
+                              </p>
+                              <ImBin
+                                className="del-btn"
+                                onClick={() =>
+                                  filterItem?._id &&
+                                  handleDelete(filterItem._id)
+                                }
+                              />
+                            </span>
+                          );
+                        }
+                      )}
                     </span>
                   </div>
                 ))}

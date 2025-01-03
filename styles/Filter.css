@@ -2,7 +2,7 @@
   @apply w-full h-full px-[2rem] py-[1.5rem] overflow-scroll overflow-x-hidden;
 }
 .filter-container::-webkit-scrollbar,
-.preview-box-filter::-webkit-scrollbar {
+.preview-container-filter::-webkit-scrollbar {
   @apply w-0;
 }
 .FiltersForm-container {
@@ -20,13 +20,16 @@
   @apply flex items-center gap-[1.5rem] flex-col py-[4rem] w-[50%];
 }
 .preview-container-filter {
-  @apply border-[1px] border-gray-200 shadow-md shadow-gray-200 mt-[4rem] h-[60vh] overflow-scroll overflow-x-hidden;
+  @apply border-[1px] rounded-[0.8rem] border-gray-200 shadow-md shadow-gray-200 mt-[4rem] h-[60vh] overflow-scroll overflow-x-hidden;
 }
 .preview-box-filter {
   @apply flex items-start justify-start w-full gap-[2rem] px-[2rem] py-[1.5rem];
 }
-.preview-box-filter div {
+.filter-group {
   @apply w-1/2;
+}
+.filter-group div {
+  @apply w-full;
 }
 .filter-form input,
 .filter-form select {
@@ -39,4 +42,7 @@
     var(--background-primary),
     var(--background-secondry)
   );
+}
+.del-btn{
+  @apply text-2xl cursor-pointer;
 }
