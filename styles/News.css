@@ -1,0 +1,25 @@
+.News-form-container {
+  @apply w-full h-full px-[2rem] py-[1.5rem] overflow-scroll overflow-x-hidden flex flex-col gap-[2rem];
+}
+.News-form-container::-webkit-scrollbar {
+  @apply w-0;
+}
+.news-header,
+.news-preview-header {
+  @apply w-full text-center font-bold text-2xl;
+}
+.news-form {
+  @apply flex items-center justify-center w-full flex-wrap gap-[2rem] pb-[4rem] border-b-[2px] border-gray-200;
+}
+.news-form input,
+.news-form textarea {
+  @apply w-[30.3%] border-[1px] border-gray-200 shadow-md outline-none shadow-gray-200 px-[2rem] py-[0.75rem] rounded-[0.5rem];
+}
+.news-form button {
+  @apply w-fit text-[1rem] px-[2rem] py-[0.5rem] rounded-full font-bold;
+  background: linear-gradient(
+    110deg,
+    var(--background-primary),
+    var(--background-secondry)
+  );
+}
