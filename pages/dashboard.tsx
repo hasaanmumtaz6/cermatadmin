@@ -27,7 +27,7 @@ const Dashboard = () => {
       .then((res) => {
         setProduct(res?.data);
       })
-      .catch((error:string) => {
+      .catch((error: string) => {
         setIsError(`Error fetching product profits:${error}`);
       });
   });
@@ -78,9 +78,9 @@ const Dashboard = () => {
         </div>
 
         <h2 className="section-title">Product List</h2>
-        {isError&&<p>{isError}</p>}
+        {isError && <p>{isError}</p>}
         <div className="product-List">
-          {product.map((product, index:number) => (
+          {product.map((product, index: number) => (
             <div
               key={index}
               className="product-card-box"
@@ -92,7 +92,12 @@ const Dashboard = () => {
                     product?.imageHeight >= 380 ? "440" : "L440"
                   }-pic-box`}
                 >
-                  <Image src={product?.productImage} alt={product?.productNameEng} height={product?.imageHeight} width={product?.imageWidth} />
+                  <Image
+                    src={product?.productImage}
+                    alt={product?.productNameEng}
+                    height={product?.imageHeight}
+                    width={product?.imageWidth}
+                  />
                 </div>
                 <span className="product-content-box">
                   <h3>{product?.productNameEng}</h3>

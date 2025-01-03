@@ -38,6 +38,9 @@
 .product-pic-box {
   @apply absolute top-[-8rem] flex items-end justify-end -left-4;
 }
+.product-pic-box img {
+  @apply w-full h-full;
+}
 .product-440-pic-box {
   @apply top-[-8rem] -left-4 h-[450px];
 }
