@@ -83,7 +83,7 @@ const FiltersForm = () => {
     {}
   );
 
-  const handleDelete = async (filterId: any) => {
+  const handleDelete = async (filterId:string) => {
     try {
       const response = await axios.delete(
         `/api/filter?filterId=${filterId}`
@@ -157,7 +157,7 @@ const FiltersForm = () => {
                     </h5>
                     <span className="subcategory-list flex flex-col items-start justify-start w-full gap-[1rem]">
                       {groupedFilters[filterType][category].map((subCategory, index) => {
-                        const filterItem = filters.find(
+                        const filterItem = filters?.find(
                           (f) =>
                             f.subfilterCategory === subCategory &&
                             f.filterCategory === category
@@ -171,7 +171,7 @@ const FiltersForm = () => {
                             <p className="subcategory-item text-[0.75rem]">
                               {subCategory}
                             </p>
-                            <ImBin className="text-2xl" onClick={() => handleDelete(filterItem?._id)} />
+                            <ImBin className="text-2xl" onClick={() =>filterItem?._id && handleDelete(filterItem._id)} />
                           </span>
                         );
                       })}
