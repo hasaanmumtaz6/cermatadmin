@@ -68,3 +68,10 @@
 .success-message {
   @apply w-fit px-[2rem] py-[0.75rem] bg-[#295a0d] rounded-[0.5rem] text-white fixed top-[2rem] right-[2rem] flex items-center gap-[1.25rem] animate-pulse;
 }
+.filters-product-form {
+  @apply flex items-center gap-[2rem] !flex-row w-full;
+}
+.filters-product-form select {
+  @apply w-[48%] bg-white border-[1px] outline-none px-[2rem] py-[0.75rem] rounded-[0.5rem] border-gray-200 shadow-md shadow-gray-200;
+}
+/* .filters-product-form */

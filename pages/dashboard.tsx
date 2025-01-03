@@ -14,6 +14,9 @@ interface Product {
   productBackground: string;
   productImage: string;
   productNameEng: string;
+  filter: string;
+  brandLabelFilter: string;
+  privateLabelFilter: string;
   productDescriptionEng: string;
   imageHeight: number;
   imageWidth: number;
@@ -128,13 +131,17 @@ const Dashboard = () => {
                     width={product?.imageWidth}
                   />
                 </div>
+                
+                
                 <span className="product-content-box">
                   <h3>{product?.productNameEng}</h3>
                   <p>{product?.productDescriptionEng}</p>
                 </span>
                 <div className="editingbadges">
-                  {/* <FaPencilAlt /> */}
                   <ImBin onClick={() => handleDelete(product._id)} />
+                  {/* <p>{product?.filter}</p>
+                  <p>{product?.brandLabelFilter}</p>
+                  <p>{product?.privateLabelFilter}</p> */}
                 </div>
               </div>
             </div>

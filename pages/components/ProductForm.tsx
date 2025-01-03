@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { SiTicktick } from "react-icons/si";
+import axios from "axios";
+interface Filters {
+  _id: string;
+  filter: string;
+  filterCategory: string;
+  subfilterCategory: string;
+}
 
 const ProductForm = () => {
   const [productNameEng, setProductNameEng] = useState("");
   const [productNameMK, setProductNameMk] = useState("");
   const [productNameRS, setProductNameRS] = useState("");
+  const [privateLabelFilter, setPrivateLabelFilter] = useState("");
+  const [brandLabelFilter, setBrandLabelFilter] = useState("");
   const [backgoundColor, setBackgoundColor] = useState("#ececec");
   const [productDescriptionEng, setProductDescriptionEng] = useState("");
   const [productDescriptionMK, setProductDescriptionMk] = useState("");
@@ -14,6 +23,9 @@ const ProductForm = () => {
   const [imageWidth, setImageWidth] = useState<number>(0);
   const [imageSrc, setImageSrc] = useState<string>("");
   const [successMessage, setSuccessMessage] = useState("");
+  const [filters, setFilters] = useState<Filters[]>([]);
+  const [filter, setFilter] = useState("");
+  const [isError, setIsError] = useState("");
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -45,6 +57,9 @@ const ProductForm = () => {
       productDescriptionRS,
       imageHeight,
       imageWidth,
+      filter,
+      privateLabelFilter,
+      brandLabelFilter,
       productBackground: backgoundColor,
       productImage: imageSrc,
     };
@@ -71,6 +86,8 @@ const ProductForm = () => {
         setProductDescriptionEng("");
         setProductDescriptionMk("");
         setProductDescriptionRS("");
+        setPrivateLabelFilter("");
+        setBrandLabelFilter("");
         setImageHeight(0);
         setImageWidth(0);
         setImageSrc("");
@@ -85,17 +102,49 @@ const ProductForm = () => {
     }
   };
 
+  const fetchFilters = () => {
+    axios
+      .get<Filters[]>("/api/filter")
+      .then((res) => {
+        setFilters(res?.data);
+      })
+      .catch((error: string) => {
+        setIsError(`Error fetching filter data: ${error}`);
+      });
+  };
+
+  useEffect(() => {
+    fetchFilters();
+  }, []);
+
+  const groupedFilters = filters.reduce(
+    (acc: Record<string, Record<string, string[]>>, filter) => {
+      if (!acc[filter.filter]) {
+        acc[filter.filter] = {};
+      }
+      if (!acc[filter.filter][filter.filterCategory]) {
+        acc[filter.filter][filter.filterCategory] = [];
+      }
+      if (filter.subfilterCategory) {
+        acc[filter.filter][filter.filterCategory].push(
+          filter.subfilterCategory
+        );
+      }
+      return acc;
+    },
+    {}
+  );
+
   return (
-    <div className="product-form-and-preview-container">
+    <div className="product-form-and-preview-container mb-[5rem]">
       {successMessage && (
-        <span
-          className="success-message"
-        >
+        <span className="success-message">
           <SiTicktick />
           <p>{successMessage}</p>
         </span>
       )}
       <h2>Product Uploader</h2>
+      {isError && <p className="text-red-500 font-bold">{isError}</p>}
       <div className="product-form-and-preview-box">
         <form className="product-form-container" onSubmit={handleSubmit}>
           <span className="product-name-color-picker">
@@ -127,6 +176,57 @@ const ProductForm = () => {
               />
             </span>
           </span>
+          <span className="filters-product-form">
+            <span>
+              <label htmlFor="brnads">Filter By Brand</label>
+              <select
+                className="w-full border border-gray-300 rounded-md px-4 py-2"
+                onChange={(e) => {
+                  setBrandLabelFilter(e.target.value);
+                  setFilter("brand");
+                }}
+              >
+                <option value="">Select a Brand</option>
+                {groupedFilters.brand &&
+                  Object.keys(groupedFilters.brand).map((category) => (
+                    <optgroup key={category} label={`${category}`}>
+                      {groupedFilters.brand[category].map(
+                        (subCategory, index) => (
+                          <option key={index} value={subCategory}>
+                            {subCategory}
+                          </option>
+                        )
+                      )}
+                    </optgroup>
+                  ))}
+              </select>
+            </span>
+            <span>
+              <label htmlFor="plabels">Filter By Private Label</label>
+              <select
+                className="w-full border border-gray-300 rounded-md px-4 py-2"
+                onChange={(e) => {
+                  setPrivateLabelFilter(e.target.value);
+                  setFilter("private-label");
+                }}
+              >
+                <option value="">Select a Private Label</option>
+                {groupedFilters.privateLabel &&
+                  Object.keys(groupedFilters.privateLabel).map((category) => (
+                    <optgroup key={category} label={`${category}`}>
+                      {groupedFilters.privateLabel[category].map(
+                        (subCategory, index) => (
+                          <option key={index} value={subCategory}>
+                            {subCategory}
+                          </option>
+                        )
+                      )}
+                    </optgroup>
+                  ))}
+              </select>
+            </span>
+          </span>
+
           <span>
             <textarea
               rows={5}
@@ -159,6 +259,7 @@ const ProductForm = () => {
               onChange={handleImageUpload}
             />
           </span>
+
           <button type="submit">Upload Product</button>
         </form>
 

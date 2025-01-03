@@ -21,7 +21,10 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
       productBackground,
       imageHeight,
       imageWidth,
+      filter,
       productImage,
+      privateLabelFilter,
+      brandLabelFilter,
     } = req.body;
     const productListerDoc = await Product.create({
       productNameEng,
@@ -33,7 +36,10 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
       productBackground,
       imageHeight,
       imageWidth,
+      filter,
       productImage,
+      privateLabelFilter,
+      brandLabelFilter,
     });
 
     res.json(productListerDoc);

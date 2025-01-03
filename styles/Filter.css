@@ -1,0 +1,42 @@
+.filter-container {
+  @apply w-full h-full px-[2rem] py-[1.5rem] overflow-scroll overflow-x-hidden;
+}
+.filter-container::-webkit-scrollbar,
+.preview-box-filter::-webkit-scrollbar {
+  @apply w-0;
+}
+.FiltersForm-container {
+  @apply w-full;
+}
+.filter-form-box {
+  @apply flex items-start justify-center w-full;
+}
+.filterform-header,
+.preview-filter-form {
+  @apply w-full text-center text-2xl font-bold;
+}
+.filter-form,
+.preview-container-filter {
+  @apply flex items-center gap-[1.5rem] flex-col py-[4rem] w-[50%];
+}
+.preview-container-filter {
+  @apply border-[1px] border-gray-200 shadow-md shadow-gray-200 mt-[4rem] h-[60vh] overflow-scroll overflow-x-hidden;
+}
+.preview-box-filter {
+  @apply flex items-start justify-start w-full gap-[2rem] px-[2rem] py-[1.5rem];
+}
+.preview-box-filter div {
+  @apply w-1/2;
+}
+.filter-form input,
+.filter-form select {
+  @apply px-[2rem] w-[320px] py-[0.5rem] outline-none border-[1px] border-gray-200 rounded-[0.5rem];
+}
+.filter-form button {
+  @apply w-fit text-[1rem] px-[2rem] py-[0.5rem] rounded-full font-bold;
+  background: linear-gradient(
+    110deg,
+    var(--background-primary),
+    var(--background-secondry)
+  );
+}
