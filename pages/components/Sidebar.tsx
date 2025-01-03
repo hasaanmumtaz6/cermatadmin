@@ -3,7 +3,7 @@ import React from "react";
 import person from "@/public/images/person1.png";
 import Link from "next/link";
 import { IoHome, IoSettings } from "react-icons/io5";
-import { FaCube, FaIndustry, FaInfo, FaNewspaper } from "react-icons/fa";
+import { FaCube, FaFilter, FaIndustry, FaInfo, FaNewspaper } from "react-icons/fa";
 import { FaMessage } from "react-icons/fa6";
 import { AiFillProduct } from "react-icons/ai";
 import { MdOutlineWork } from "react-icons/md";
@@ -33,6 +33,10 @@ const Sidebar = () => {
           <Link href={"/metropoli"} className="tab-link">
             <FaCube />
             <b>Metropoli</b>
+          </Link>
+          <Link href={"/filters"} className="tab-link">
+            <FaFilter />
+            <b>Filters</b>
           </Link>
           <Link href={"/products"} className="tab-link">
             <AiFillProduct />
