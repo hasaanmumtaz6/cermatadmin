@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import { SiTicktick } from "react-icons/si";
 
 const ProductForm = () => {
   const [productNameEng, setProductNameEng] = useState("");
@@ -74,6 +75,8 @@ const ProductForm = () => {
         setImageWidth(0);
         setImageSrc("");
         setSuccessMessage("");
+        const audio = new Audio("/audio/notification.mp3");
+        audio.play();
       } else {
         console.error(data.error || "Something went wrong");
       }
@@ -85,12 +88,12 @@ const ProductForm = () => {
   return (
     <div className="product-form-and-preview-container">
       {successMessage && (
-        <p
+        <span
           className="success-message"
-          style={{ color: "green", marginTop: "1rem" }}
         >
-          {successMessage}
-        </p>
+          <SiTicktick />
+          <p>{successMessage}</p>
+        </span>
       )}
       <h2>Product Uploader</h2>
       <div className="product-form-and-preview-box">
