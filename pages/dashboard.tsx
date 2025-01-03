@@ -80,7 +80,7 @@ const Dashboard = () => {
         <h2 className="section-title">Product List</h2>
         {isError&&<p>{isError}</p>}
         <div className="product-List">
-          {product.map((product:any, index:number) => (
+          {product.map((product, index:number) => (
             <div
               key={index}
               className="product-card-box"
