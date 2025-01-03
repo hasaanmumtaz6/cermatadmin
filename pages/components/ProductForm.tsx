@@ -62,7 +62,7 @@ const ProductForm = () => {
       if (response.ok) {
         setTimeout(() => {
           setSuccessMessage("Product uploaded successfully!");
-          setTimeout(() => setSuccessMessage(""), 10000);
+          setTimeout(() => setSuccessMessage(""), 5000);
         }, 1000);
         setProductNameEng("");
         setProductNameMk("");
@@ -192,7 +192,7 @@ const ProductForm = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-[1rem]">
+          <div className="flex flex-col gap-[1rem] mt-[10rem]">
             <div
               className="product-card-box mb-[20rem]"
               style={{ background: `${backgoundColor}` }}
@@ -219,7 +219,7 @@ const ProductForm = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-[1rem]">
+          <div className="flex flex-col gap-[1rem] mt-[10rem]">
             <div
               className="product-card-box mb-[20rem]"
               style={{ background: `${backgoundColor}` }}

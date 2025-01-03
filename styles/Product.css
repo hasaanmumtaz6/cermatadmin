@@ -59,12 +59,12 @@
 }
 
 .preview-box {
-  @apply border-[2px] rounded-[0.5rem] border-gray-200 shadow-md shadow-gray-200 h-[60vh] overflow-scroll overflow-x-hidden pt-[60rem] pb-[3rem] px-[4rem];
+  @apply border-[2px] rounded-[0.5rem] border-gray-200 shadow-md shadow-gray-200 h-[90vh] overflow-scroll overflow-x-hidden pt-[60rem] pb-[6rem] px-[4rem];
 }
 .preview-box::-webkit-scrollbar {
   @apply w-0;
 }
 
 .success-message {
-  @apply w-fit px-[2rem] py-[0.75rem] bg-[#295a0d] rounded-[0.5rem] text-white fixed top-[2rem] right-[2rem] flex items-center gap-[1.25rem];
+  @apply w-fit px-[2rem] py-[0.75rem] bg-[#295a0d] rounded-[0.5rem] text-white fixed top-[2rem] right-[2rem] flex items-center gap-[1.25rem] animate-pulse;
 }

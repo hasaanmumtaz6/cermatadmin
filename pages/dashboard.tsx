@@ -44,7 +44,7 @@ const Dashboard = () => {
       if (response.status === 200) {
         setTimeout(() => {
           setSuccessMessage("Product Deleted successfully!");
-          setTimeout(() => setSuccessMessage(""), 10000);
+          setTimeout(() => setSuccessMessage(""), 5000);
         }, 1000);
         const audio = new Audio("/audio/notification.mp3");
         audio.play();
