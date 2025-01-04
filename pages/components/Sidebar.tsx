@@ -53,7 +53,7 @@ const Sidebar = () => {
             <FaIndustry />
             <b>Private Labels</b>
           </Link>
-          <div className="news-links" onClick={(e)=>{setNewsShow((current)=>!current)}}>
+          <div className="news-links" onClick={()=>{setNewsShow((current)=>!current)}}>
             <FaNewspaper />
             <h2>News</h2>
           </div>
