@@ -4,7 +4,6 @@ import person from "@/public/images/person1.png";
 import Link from "next/link";
 import { IoHome, IoSettings } from "react-icons/io5";
 import {
-  FaAngleRight,
   FaCube,
   FaFilter,
   FaIndustry,
