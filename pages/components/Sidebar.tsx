@@ -1,14 +1,22 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import person from "@/public/images/person1.png";
 import Link from "next/link";
 import { IoHome, IoSettings } from "react-icons/io5";
-import { FaCube, FaFilter, FaIndustry, FaInfo, FaNewspaper } from "react-icons/fa";
+import {
+  FaAngleRight,
+  FaCube,
+  FaFilter,
+  FaIndustry,
+  FaInfo,
+  FaNewspaper,
+} from "react-icons/fa";
 import { FaMessage } from "react-icons/fa6";
 import { AiFillProduct } from "react-icons/ai";
 import { MdOutlineWork } from "react-icons/md";
 
 const Sidebar = () => {
+  const [newsShow, setNewsShow] = useState(false);
   return (
     <nav className="sidebar">
       <div className="profile-tabs-box">
@@ -46,10 +54,20 @@ const Sidebar = () => {
             <FaIndustry />
             <b>Private Labels</b>
           </Link>
-          <Link href={"/news"} className="tab-link">
+          <div className="news-links" onClick={(e)=>{setNewsShow((current)=>!current)}}>
             <FaNewspaper />
-            <b>News</b>
-          </Link>
+            <h2>News</h2>
+          </div>
+          {newsShow && (
+            <span className="news-tabs">
+              <Link href={"/news"} className="tab-link">
+                <b>News Uploader</b>
+              </Link>
+              <Link href={"/news-list"} className="tab-link">
+                <b>News List</b>
+              </Link>
+            </span>
+          )}
           <Link href={"/careers"} className="tab-link">
             <MdOutlineWork />
             <b>Careers</b>

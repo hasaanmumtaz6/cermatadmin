@@ -67,7 +67,7 @@ body {
   @apply flex flex-col gap-[0.75rem] items-start justify-start text-[2rem] w-full px-[2rem] overflow-scroll overflow-x-hidden;
 }
 .tabs-sidebar-admin .tab-link {
-  @apply flex gap-[1.25rem] items-center justify-start w-full px-[1.5rem] py-[0.5rem] rounded-full hover:text-[var(--text-color-secondry)] transition-all duration-700;
+  @apply flex gap-[1.25rem] items-center justify-start w-full px-[1.5rem] py-[0.5rem] rounded-full hover:text-[var(--text-color-secondry)] transition-all duration-700 ease-in-out;
 }
 .tabs-sidebar-admin a b {
   @apply font-normal;
@@ -79,6 +79,12 @@ body {
     var(--background-primary),
     var(--background-tertiary)
   );
+}
+.news-links {
+  @apply flex items-center gap-[1rem] justify-center px-[1.5rem] select-none hover:text-[var(--text-color-secondry)] cursor-pointer transition-all duration-700 ease-in-out;
+}
+.news-tabs {
+  @apply pl-[2rem];
 }
 /* Sidebar */
 

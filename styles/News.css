@@ -68,23 +68,42 @@
   @apply w-full relative;
 }
 
-.paragraph-slider .slick-prev, .paragraph-slider .slick-next{
+.paragraph-slider .slick-prev,
+.paragraph-slider .slick-next {
   @apply !top-[24rem] !w-[2.5rem] !h-[2.5rem];
 }
-.paragraph-slider .slick-prev{
+.paragraph-slider .slick-prev {
   @apply left-[1rem];
 }
-.paragraph-slider .slick-next{
+.paragraph-slider .slick-next {
   @apply right-[33rem];
 }
-.paragraph-slider .slick-prev::before, .paragraph-slider .slick-next::before {
+.paragraph-slider .slick-prev::before,
+.paragraph-slider .slick-next::before {
   @apply !font-serif !text-[2rem] !text-black;
 }
 .paragraph-slider .slick-next::before {
   @apply !border-[2px] !border-gray-600 px-[1rem] py-[0.7rem] rounded-full;
 }
 
-.news-preview-card-container{
+.news-preview-card-container {
   @apply w-full flex flex-col items-start justify-start gap-[5rem];
 }
 
+/* news-list */
+.news-list-container {
+  @apply flex items-center justify-center flex-col px-[2rem] py-[1.5rem] overflow-scroll overflow-x-hidden gap-[2rem];
+}
+.news-list-container::-webkit-scrollbar {
+  @apply w-0;
+}
+.news-list-heading {
+  @apply text-4xl font-bold;
+}
+.news-list-card-container {
+  @apply w-full flex items-center justify-center flex-col gap-[6rem];
+}
+.del-btn-news-list {
+  @apply text-[4rem] absolute top-[1.5rem] left-[1.5rem] p-[0.5rem];
+}
+/* news-list */
