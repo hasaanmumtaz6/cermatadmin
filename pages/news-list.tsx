@@ -48,7 +48,7 @@ const NewsList = () => {
 
       if (response.status === 200) {
         setTimeout(() => {
-          setSuccessMessage("Product Deleted successfully!");
+          setSuccessMessage("News Deleted successfully!");
           setTimeout(() => setSuccessMessage(""), 5000);
         }, 1000);
         const audio = new Audio("/audio/notification.mp3");

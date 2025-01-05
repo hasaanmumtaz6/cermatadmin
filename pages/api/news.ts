@@ -4,7 +4,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 export const config = {
   api: {
     bodyParser: {
-      sizeLimit: '500mb',
+      sizeLimit: '1000mb',
     },
   },
 };
@@ -36,6 +36,15 @@ export default async function handle(
       newsDescription3Eng,
       newsDescription3MK,
       newsDescription3RS,
+      newsDescription4Eng,
+      newsDescription4MK,
+      newsDescription4RS,
+      newsDescription5Eng,
+      newsDescription5MK,
+      newsDescription5RS,
+      newsDescription6Eng,
+      newsDescription6MK,
+      newsDescription6RS,
       imageSrc,
     } = req.body;
     const productListerDoc = await News.create({
@@ -54,6 +63,15 @@ export default async function handle(
       newsDescription3Eng,
       newsDescription3MK,
       newsDescription3RS,
+      newsDescription4Eng,
+      newsDescription4MK,
+      newsDescription4RS,
+      newsDescription5Eng,
+      newsDescription5MK,
+      newsDescription5RS,
+      newsDescription6Eng,
+      newsDescription6MK,
+      newsDescription6RS,
       imageSrc,
     });
 

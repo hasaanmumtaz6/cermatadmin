@@ -20,9 +20,21 @@ const NewsForm = () => {
   const [newsDescription3Eng, setNewsDescription3Eng] = useState("");
   const [newsDescription3MK, setNewsDescription3MK] = useState("");
   const [newsDescription3RS, setNewsDescription3RS] = useState("");
+  const [newsDescription4Eng, setNewsDescription4Eng] = useState("");
+  const [newsDescription4MK, setNewsDescription4MK] = useState("");
+  const [newsDescription4RS, setNewsDescription4RS] = useState("");
+  const [newsDescription5Eng, setNewsDescription5Eng] = useState("");
+  const [newsDescription5MK, setNewsDescription5MK] = useState("");
+  const [newsDescription5RS, setNewsDescription5RS] = useState("");
+  const [newsDescription6Eng, setNewsDescription6Eng] = useState("");
+  const [newsDescription6MK, setNewsDescription6MK] = useState("");
+  const [newsDescription6RS, setNewsDescription6RS] = useState("");
   const [imageSrc, setImageSrc] = useState<string>("");
   const [isDescriptio2, setIsDescription2] = useState(false);
   const [isDescriptio3, setIsDescription3] = useState(false);
+  const [isDescriptio4, setIsDescription4] = useState(false);
+  const [isDescriptio5, setIsDescription5] = useState(false);
+  const [isDescriptio6, setIsDescription6] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [isError, setIsError] = useState("");
 
@@ -61,6 +73,15 @@ const NewsForm = () => {
       newsDescription3Eng,
       newsDescription3MK,
       newsDescription3RS,
+      newsDescription4Eng,
+      newsDescription4MK,
+      newsDescription4RS,
+      newsDescription5Eng,
+      newsDescription5MK,
+      newsDescription5RS,
+      newsDescription6Eng,
+      newsDescription6MK,
+      newsDescription6RS,
       imageSrc,
     };
 
@@ -94,6 +115,15 @@ const NewsForm = () => {
         setNewsDescription3Eng("");
         setNewsDescription3MK("");
         setNewsDescription3RS("");
+        setNewsDescription4Eng("");
+        setNewsDescription4MK("");
+        setNewsDescription4RS("");
+        setNewsDescription5Eng("");
+        setNewsDescription5MK("");
+        setNewsDescription5RS("");
+        setNewsDescription6Eng("");
+        setNewsDescription6MK("");
+        setNewsDescription6RS("");
         setImageSrc("");
         setSuccessMessage("");
         setIsError("");
@@ -200,6 +230,9 @@ const NewsForm = () => {
             onClick={() => {
               setIsDescription2((current) => !current);
               setIsDescription3(false);
+              setIsDescription4(false);
+              setIsDescription5(false);
+              setIsDescription6(false);
             }}
           />
         </span>
@@ -235,6 +268,9 @@ const NewsForm = () => {
             onClick={() => {
               setIsDescription2(false);
               setIsDescription3((current) => !current);
+              setIsDescription4(false);
+              setIsDescription5(false);
+              setIsDescription6(false);
             }}
           />
         </span>
@@ -260,6 +296,120 @@ const NewsForm = () => {
               placeholder="News Description Serbian"
               value={newsDescription3RS}
               onChange={(e) => setNewsDescription3RS(e.target.value)}
+            ></textarea>
+          </span>
+        )}
+
+        <span className="description-box-header">
+          <h3>Description 4 {"(optional)"}:</h3>
+          <FaAngleDown
+            onClick={() => {
+              setIsDescription2(false);
+              setIsDescription3(false);
+              setIsDescription5(false);
+              setIsDescription6(false);
+              setIsDescription4((current) => !current);
+            }}
+          />
+        </span>
+        {isDescriptio4 && (
+          <span className="description-box">
+            <textarea
+              cols={20}
+              rows={5}
+              placeholder="News Description English"
+              value={newsDescription4Eng}
+              onChange={(e) => setNewsDescription4Eng(e.target.value)}
+            ></textarea>
+            <textarea
+              cols={20}
+              rows={5}
+              placeholder="News Description Macedonian"
+              value={newsDescription4MK}
+              onChange={(e) => setNewsDescription4MK(e.target.value)}
+            ></textarea>
+            <textarea
+              cols={20}
+              rows={5}
+              placeholder="News Description Serbian"
+              value={newsDescription4RS}
+              onChange={(e) => setNewsDescription4RS(e.target.value)}
+            ></textarea>
+          </span>
+        )}
+
+        <span className="description-box-header">
+          <h3>Description 5 {"(optional)"}:</h3>
+          <FaAngleDown
+            onClick={() => {
+              setIsDescription2(false);
+              setIsDescription3(false);
+              setIsDescription4(false);
+              setIsDescription5((current) => !current);
+              setIsDescription6(false);
+            }}
+          />
+        </span>
+        {isDescriptio5 && (
+          <span className="description-box">
+            <textarea
+              cols={20}
+              rows={5}
+              placeholder="News Description English"
+              value={newsDescription5Eng}
+              onChange={(e) => setNewsDescription5Eng(e.target.value)}
+            ></textarea>
+            <textarea
+              cols={20}
+              rows={5}
+              placeholder="News Description Macedonian"
+              value={newsDescription5MK}
+              onChange={(e) => setNewsDescription5MK(e.target.value)}
+            ></textarea>
+            <textarea
+              cols={20}
+              rows={5}
+              placeholder="News Description Serbian"
+              value={newsDescription5RS}
+              onChange={(e) => setNewsDescription5RS(e.target.value)}
+            ></textarea>
+          </span>
+        )}
+
+        <span className="description-box-header">
+          <h3>Description 6 {"(optional)"}:</h3>
+          <FaAngleDown
+            onClick={() => {
+              setIsDescription2(false);
+              setIsDescription3(false);
+              setIsDescription4(false);
+              setIsDescription5(false);
+              setIsDescription6((current) => !current);
+            }}
+          />
+        </span>
+        {isDescriptio6 && (
+          <span className="description-box">
+            <textarea
+              cols={20}
+              rows={5}
+              placeholder="News Description English"
+              value={newsDescription6Eng}
+              onChange={(e) => setNewsDescription6Eng(e.target.value)}
+            ></textarea>
+            <textarea
+              cols={20}
+              rows={5}
+              placeholder="News Description Macedonian"
+              value={newsDescription6MK}
+              onChange={(e) => setNewsDescription6MK(e.target.value)}
+            ></textarea>
+            <textarea
+              cols={20}
+              rows={5}
+              placeholder="News Description Serbian"
+              value={newsDescription6RS}
+              onChange={(e) => setNewsDescription6RS(e.target.value)}
             ></textarea>
           </span>
         )}
