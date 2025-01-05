@@ -1,7 +1,7 @@
-.product-upload-container {
+.product-upload-container, .product-List-contaner {
   @apply w-full h-full px-[2rem] py-[1.5rem] overflow-scroll overflow-x-hidden;
 }
-.product-upload-container::-webkit-scrollbar {
+.product-upload-container::-webkit-scrollbar, .product-List-contaner::-webkit-scrollbar {
   @apply w-0;
 }
 .product-form-and-preview-container h2,

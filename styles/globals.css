@@ -83,8 +83,8 @@ body {
 .news-links {
   @apply flex items-center gap-[1rem] justify-center px-[1.5rem] select-none hover:text-[var(--text-color-secondry)] cursor-pointer transition-all duration-700 ease-in-out;
 }
-.news-tabs {
-  @apply pl-[2rem];
+.news-tabs, .products-tabs {
+  @apply pl-[2.75rem] text-[1.5rem];
 }
 /* Sidebar */
 

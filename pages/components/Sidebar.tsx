@@ -16,6 +16,7 @@ import { MdOutlineWork } from "react-icons/md";
 
 const Sidebar = () => {
   const [newsShow, setNewsShow] = useState(false);
+  const [productShow, setProductShow] = useState(false);
   return (
     <nav className="sidebar">
       <div className="profile-tabs-box">
@@ -45,15 +46,36 @@ const Sidebar = () => {
             <FaFilter />
             <b>Filters</b>
           </Link>
-          <Link href={"/products"} className="tab-link">
+
+          <div
+            className="news-links"
+            onClick={() => {
+              setProductShow((current) => !current);
+            }}
+          >
             <AiFillProduct />
-            <b>Products</b>
-          </Link>
+            <h2>Products</h2>
+          </div>
+          {productShow && (
+            <span className="products-tabs">
+              <Link href={"/products"} className="tab-link">
+                Products Uploader
+              </Link>
+              <Link href={"/products-list"} className="tab-link">
+                Products List
+              </Link>
+            </span>
+          )}
           <Link href={"/private-labels"} className="tab-link">
             <FaIndustry />
             <b>Private Labels</b>
           </Link>
-          <div className="news-links" onClick={()=>{setNewsShow((current)=>!current)}}>
+          <div
+            className="news-links"
+            onClick={() => {
+              setNewsShow((current) => !current);
+            }}
+          >
             <FaNewspaper />
             <h2>News</h2>
           </div>
