@@ -15,6 +15,7 @@ import { AiFillProduct } from "react-icons/ai";
 import { MdOutlineWork } from "react-icons/md";
 
 const Sidebar = () => {
+  const [aboutShow, setAboutShow] = useState(false);
   const [productShow, setProductShow] = useState(false);
   const [newsShow, setNewsShow] = useState(false);
   const [careerShow, setCareerShow] = useState(false);
@@ -36,10 +37,38 @@ const Sidebar = () => {
             <IoHome />
             <b>Home</b>
           </Link>
-          <Link href={"/about"} className="tab-link">
+
+          <div
+            className="news-links"
+            onClick={() => {
+              setAboutShow((current) => !current);
+            }}
+          >
             <FaInfo />
-            <b>About</b>
-          </Link>
+            <h2>About</h2>
+          </div>
+          {aboutShow && (
+            <span className="products-tabs">
+              <Link href={"/about-banner"} className="tab-link">
+                About Herro banner
+              </Link>
+              <Link href={"/about-section1"} className="tab-link">
+                About Section 1
+              </Link>
+              <Link href={"/about-section2"} className="tab-link">
+                About Section 2
+              </Link>
+              <Link href={"/about-section3"} className="tab-link">
+                About Section 3
+              </Link>
+              <Link href={"/about-matrix"} className="tab-link">
+                About Matrix
+              </Link>
+              <Link href={"/about"} className="tab-link">
+                About Page View
+              </Link>
+            </span>
+          )}
           <Link href={"/metropoli"} className="tab-link">
             <FaCube />
             <b>Metropoli</b>

@@ -33,7 +33,6 @@ const Careers = () => {
       img.src = e.target.result as string;
       img.onload = () => {
         setCareersImage(img.src);
-        console.log(file);
       };
     };
     reader.readAsDataURL(file);
@@ -88,7 +87,7 @@ const Careers = () => {
         console.error(data.error || "Something went wrong");
       }
     } catch (error) {
-      console.error("Error uploading Careers:", error);
+      setIsError(`Error uploading Career: ${error}`);
     }
   };
 

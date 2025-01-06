@@ -1,0 +1,62 @@
+.about-banner-container {
+  @apply w-full h-full px-[2rem] py-[1.5rem] overflow-scroll overflow-x-hidden;
+}
+.about-banner-container::-webkit-scrollbar {
+  @apply w-0;
+}
+.about-banner-heading,
+.about-banner-form-preview-heading {
+  @apply w-full text-center text-2xl font-bold mt-[2rem];
+}
+.about-banner-form {
+  @apply w-full flex flex-col py-[2rem] items-center relative gap-[2rem];
+}
+.about-banner-form span {
+  @apply w-full flex items-center relative gap-[2rem];
+}
+.about-banner-form input,
+.about-banner-form textarea {
+  @apply w-[33.3%] border-[1px] border-gray-200 shadow-md outline-none shadow-gray-200 px-[2rem] py-[0.75rem] rounded-[0.5rem];
+}
+.about-banner-form span label {
+  @apply w-full bg-[#fff] text-black text-[3rem] absolute left-0 text-center flex items-center justify-center rounded-[0.5rem] px-[2rem] py-[0.5rem] border-[1px] border-gray-200 shadow-md shadow-gray-200 gap-[2rem];
+}
+.about-banner-form span label p {
+  @apply text-[1.25rem] text-gray-400;
+}
+.about-banner-form span label img {
+  @apply w-[4rem] h-[3rem] rounded-[0.5rem] border-none;
+}
+.about-banner-form button {
+  @apply w-fit text-[1rem] px-[2rem] py-[0.5rem] rounded-full font-bold;
+  background: linear-gradient(
+    110deg,
+    var(--background-primary),
+    var(--background-secondry)
+  );
+}
+
+.image-title-box-about-banner {
+  @apply relative w-full h-full py-[2rem];
+}
+.image-title-box-about-banner img {
+  @apply w-full h-full rounded-[2.5rem];
+}
+.image-title-box-about-banner h2 {
+  @apply absolute left-[2rem] bottom-[20rem] text-[5rem] font-bold text-white w-[46.3125rem] leading-[5.25rem];
+}
+.description-container-about-banner {
+  @apply px-[6rem];
+}
+.description-box-about-banner {
+  @apply w-full h-full flex items-start justify-center gap-[1rem] px-[2rem] rounded-[2.5rem] relative bottom-[15rem] text-white saturate-[180%] bg-[#0000ffa6] blur-[1px];
+}
+.description-box-about-banner div {
+  @apply flex flex-col items-start justify-center gap-[2rem] py-[2rem] px-[3rem] w-[50%];
+}
+.description-box-about-banner div p {
+  @apply text-[1.5rem] leading-[2rem];
+}
+.description-box-about-banner div .linedesign {
+  @apply h-[0.5rem] w-[5rem] bg-[#ff0000];
+}
