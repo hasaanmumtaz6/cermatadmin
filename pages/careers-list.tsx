@@ -73,7 +73,7 @@ const CareersList = () => {
 
         <div className="careers-list-box">
           {careers.map((Careers, index) => (
-            <div className="careers-preview-card">
+            <div className="careers-preview-card" key={index}>
               {Careers.careersImage && (
                 <Image
                   src={Careers.careersImage}
