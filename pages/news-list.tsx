@@ -80,12 +80,12 @@ const NewsList = () => {
       <div className="news-list-container">
         <h3 className="news-list-heading">News List</h3>
         {isError && <p>{isError}</p>}
-                {successMessage && (
-                  <span className="success-message">
-                    <SiTicktick />
-                    <p>{successMessage}</p>
-                  </span>
-                )}
+        {successMessage && (
+          <span className="success-message">
+            <SiTicktick />
+            <p>{successMessage}</p>
+          </span>
+        )}
         <div className="news-list-card-container">
           {news.map((News, index) => (
             <div className="news-preview-card" key={index}>

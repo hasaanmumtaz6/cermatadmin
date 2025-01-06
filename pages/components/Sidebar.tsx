@@ -15,8 +15,10 @@ import { AiFillProduct } from "react-icons/ai";
 import { MdOutlineWork } from "react-icons/md";
 
 const Sidebar = () => {
-  const [newsShow, setNewsShow] = useState(false);
   const [productShow, setProductShow] = useState(false);
+  const [newsShow, setNewsShow] = useState(false);
+  const [careerShow, setCareerShow] = useState(false);
+
   return (
     <nav className="sidebar">
       <div className="profile-tabs-box">
@@ -66,10 +68,12 @@ const Sidebar = () => {
               </Link>
             </span>
           )}
+
           <Link href={"/private-labels"} className="tab-link">
             <FaIndustry />
             <b>Private Labels</b>
           </Link>
+
           <div
             className="news-links"
             onClick={() => {
@@ -89,10 +93,27 @@ const Sidebar = () => {
               </Link>
             </span>
           )}
-          <Link href={"/careers"} className="tab-link">
+
+          <div
+            className="news-links"
+            onClick={() => {
+              setCareerShow((current) => !current);
+            }}
+          >
             <MdOutlineWork />
-            <b>Careers</b>
-          </Link>
+            <h2>Careers</h2>
+          </div>
+          {careerShow && (
+            <span className="news-tabs">
+              <Link href={"/careers"} className="tab-link">
+                <b>Career Uploader</b>
+              </Link>
+              <Link href={"/careers-list"} className="tab-link">
+                <b>Career List</b>
+              </Link>
+            </span>
+          )}
+
           <Link href={"/contact"} className="tab-link">
             <FaMessage />
             <b>Contact</b>

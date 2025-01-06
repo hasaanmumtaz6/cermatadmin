@@ -1,0 +1,65 @@
+.careers-conatiner,
+.careers-list-container {
+  @apply w-full h-full px-[2rem] py-[1.5rem] overflow-scroll overflow-x-hidden;
+}
+.careers-conatiner::-webkit-scrollbar,
+.careers-list-container::-webkit-scrollbar {
+  @apply w-0;
+}
+.Careers-uploader-heading,
+.careers-preview-heading,
+.careers-list-heading {
+  @apply w-full text-center text-2xl font-bold mt-[2rem];
+}
+.careers-box {
+  @apply w-full h-full py-[4rem] flex flex-col items-start justify-start gap-[2rem];
+}
+.careers-box-inner-box {
+  @apply w-full flex flex-col items-center justify-center gap-[2rem];
+}
+.careers-uploading-form span {
+  @apply w-full flex items-center relative gap-[2rem];
+}
+.careers-uploading-form input,
+.careers-uploading-form textarea {
+  @apply w-[33.3%] border-[1px] border-gray-200 shadow-md outline-none shadow-gray-200 px-[2rem] py-[0.75rem] rounded-[0.5rem];
+}
+.careers-uploading-form span label {
+  @apply w-full bg-[#fff] text-black text-[3rem] absolute left-0 text-center flex items-center justify-center rounded-[0.5rem] px-[2rem] py-[0.5rem] border-[1px] border-gray-200 shadow-md shadow-gray-200 gap-[2rem];
+}
+.careers-uploading-form span label p {
+  @apply text-[1.25rem] text-gray-400;
+}
+.careers-uploading-form span label img {
+  @apply w-[4rem] h-[3rem] rounded-[0.5rem] border-none;
+}
+.careers-upload-btn {
+  @apply w-fit text-[1rem] px-[2rem] py-[0.5rem] rounded-full font-bold;
+  background: linear-gradient(
+    110deg,
+    var(--background-primary),
+    var(--background-secondry)
+  );
+}
+.careers-preview-container,
+.careers-preview-box {
+  @apply flex items-center justify-between gap-[2rem] w-full h-full;
+}
+.careers-preview-card {
+  @apply w-[33.3%] h-full flex flex-col items-start justify-start rounded-[1rem];
+}
+.careers-preview-card img {
+  @apply w-full;
+}
+.careers-content-preview-box {
+  @apply flex flex-col w-full px-[1rem] py-[2rem] items-start justify-start gap-[2rem];
+}
+.careers-content-preview-box h2, .bin-del-btn-careers {
+  @apply text-[3rem] leading-[3.5rem];
+}
+.careers-content-preview-box p {
+  @apply text-[1.5rem] leading-[2rem] text-gray-500;
+}
+.careers-content-preview-box h4 {
+  @apply text-[2rem] leading-[2.5rem];
+}

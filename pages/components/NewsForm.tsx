@@ -133,7 +133,7 @@ const NewsForm = () => {
         console.error(data.error || "Something went wrong");
       }
     } catch (error) {
-      console.error("Error uploading product:", error);
+      console.error("Error uploading news:", error);
     }
   };
 
