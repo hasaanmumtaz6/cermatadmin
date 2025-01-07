@@ -204,22 +204,24 @@ const AboutBannerForm = () => {
           />
         </span>
 
-        <button>Upload Hero Banner</button>
+        <button type="submit">Upload Hero Banner</button>
       </form>
 
       <div className="about-banner-form-preview-container">
         <h2 className="about-banner-form-preview-heading">Preview</h2>
         <div className="about-banner-form-preview-box">
           <div className="hero-banner-about-card-preview-box">
-            {bannerTitleEnglish && <div className="image-title-box-about-banner">
-              <Image
-                src={bannerImage}
-                alt={bannerImage}
-                width={100}
-                height={100}
-              />
-              <h2 className="about-banner-title">{bannerTitleEnglish}</h2>
-            </div>}
+            {bannerTitleEnglish && (
+              <div className="image-title-box-about-banner">
+                <Image
+                  src={bannerImage}
+                  alt={bannerImage}
+                  width={100}
+                  height={100}
+                />
+                <h2 className="about-banner-title">{bannerTitleEnglish}</h2>
+              </div>
+            )}
             <div className="description-container-about-banner">
               {bannerDescription1English && (
                 <div className="description-box-about-banner">

@@ -1,33 +1,45 @@
-.about-banner-container {
+.about-banner-container,
+.about-section1-container {
   @apply w-full h-full px-[2rem] py-[1.5rem] overflow-scroll overflow-x-hidden;
 }
-.about-banner-container::-webkit-scrollbar {
+.about-banner-container::-webkit-scrollbar,
+.about-section1-container::-webkit-scrollbar {
   @apply w-0;
 }
 .about-banner-heading,
-.about-banner-form-preview-heading {
+.about-banner-form-preview-heading,
+.about-section1-heading,
+.about-section1-preview-heading {
   @apply w-full text-center text-2xl font-bold mt-[2rem];
 }
-.about-banner-form {
+.about-banner-form,
+.about-section1-form-box {
   @apply w-full flex flex-col py-[2rem] items-center relative gap-[2rem];
 }
-.about-banner-form span {
+.about-banner-form span,
+.about-section1-form-box span {
   @apply w-full flex items-center relative gap-[2rem];
 }
 .about-banner-form input,
-.about-banner-form textarea {
+.about-banner-form textarea,
+.about-section1-form-box input,
+.about-section1-form-box textarea {
   @apply w-[33.3%] border-[1px] border-gray-200 shadow-md outline-none shadow-gray-200 px-[2rem] py-[0.75rem] rounded-[0.5rem];
 }
-.about-banner-form span label {
+.about-banner-form span label,
+.about-section1-form-box span label {
   @apply w-full bg-[#fff] text-black text-[3rem] absolute left-0 text-center flex items-center justify-center rounded-[0.5rem] px-[2rem] py-[0.5rem] border-[1px] border-gray-200 shadow-md shadow-gray-200 gap-[2rem];
 }
-.about-banner-form span label p {
+.about-banner-form span label p,
+.about-section1-form-box span label p {
   @apply text-[1.25rem] text-gray-400;
 }
-.about-banner-form span label img {
+.about-banner-form span label img,
+.about-section1-form-box span label img {
   @apply w-[4rem] h-[3rem] rounded-[0.5rem] border-none;
 }
-.about-banner-form button {
+.about-banner-form button,
+.about-section1-form-box button {
   @apply w-fit text-[1rem] px-[2rem] py-[0.5rem] rounded-full font-bold;
   background: linear-gradient(
     110deg,
@@ -59,4 +71,32 @@
 }
 .description-box-about-banner div .linedesign {
   @apply h-[0.5rem] w-[5rem] bg-[#ff0000];
+}
+.design-line-box {
+  @apply w-full flex flex-col items-start justify-start gap-[0.25rem] mt-[2rem];
+}
+.designline1 {
+  @apply h-[0.25rem] w-[6rem] bg-[#ff0000];
+}
+.designline2 {
+  @apply h-[0.25rem] w-[4rem] bg-[#0000ff];
+}
+.about-section1-form-preview-box {
+  @apply flex flex-col gap-[4rem] py-[3rem] items-center justify-center w-full;
+}
+.content-box-about-section1 {
+  @apply flex items-start justify-between w-full;
+}
+.about-section1-form-preview-box div img {
+  @apply w-full h-full rounded-[2.25rem];
+}
+.title-box-about-section1,
+.about-section1-description-box {
+  @apply w-[40%];
+}
+.title-box-about-section1 {
+  @apply text-[5.125rem] leading-[5.25rem] font-bold text-gray-800;
+}
+.about-section1-description-box {
+  @apply text-[1.25rem] leading-[1.75rem] text-gray-500;
 }

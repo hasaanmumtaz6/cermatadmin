@@ -212,7 +212,7 @@ const Careers = () => {
               ></textarea>
             </span>
 
-            <button className="careers-upload-btn">Upload Careers</button>
+            <button className="careers-upload-btn" type="submit">Upload Careers</button>
           </form>
           <div className="careers-box-inner-box careers-preview-container">
             <h2 className="careers-preview-heading">Careers Preview</h2>
