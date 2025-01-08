@@ -189,7 +189,7 @@ const About = () => {
   const handleSection2Delete = async (aboutsection2Id: string) => {
     try {
       const response = await axios.delete(
-        `/api/aboutsection1?aboutsection1Id=${aboutsection2Id}`
+        `/api/aboutsection2?aboutsection2Id=${aboutsection2Id}`
       );
 
       if (response.status === 200) {
@@ -211,7 +211,7 @@ const About = () => {
   const handleSection3Delete = async (aboutsection3Id: string) => {
     try {
       const response = await axios.delete(
-        `/api/aboutsection1?aboutsection1Id=${aboutsection3Id}`
+        `/api/aboutsection3?aboutsection3Id=${aboutsection3Id}`
       );
 
       if (response.status === 200) {

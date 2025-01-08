@@ -195,5 +195,5 @@
   @apply text-[5rem] font-bold leading-[5.25rem];
 }
 .dl-btn{
-  @apply absolute top-[4rem] left-[4rem] text-4xl text-white bg-red-400 p-[0.25rem];
+  @apply absolute top-[4rem] left-[4rem] text-4xl text-white bg-red-400 p-[0.25rem] cursor-pointer z-[9999];
 }
