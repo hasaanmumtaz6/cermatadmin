@@ -321,8 +321,70 @@ const AboutSection3Form = () => {
         </span>
         <button type="submit">Upload Section 3</button>
       </form>
-      <div className="about-section3-form-preview-box">
+      <div className="about-section3-form-preview-container">
         <h2 className="about-section3-form-preview-box-heading">Preview</h2>
+        {card1TitleEnglish && (
+          <div className="about-section3-form-preview-box">
+            <div className="about-section3-card about-section3-card1">
+              {card1TitleEnglish && (
+                <div className="about-section3-content">
+                  {card1TitleEnglish && (
+                    <div className="title-box-about-section2">
+                      <h2>{card1TitleEnglish}</h2>
+                      <span className="design-line-box">
+                        <b className="designline1"></b>
+                        <b className="designline2"></b>
+                      </span>
+                    </div>
+                  )}
+                  <i className="divider"></i>
+                  <p>{card1Description1English}</p>
+                  <p>{card1Description2English}</p>
+                </div>
+              )}
+
+              {imageSrc1 && (
+                <div className="about-section3-image">
+                  <Image
+                    src={imageSrc1}
+                    alt={`${imageSrc1}`}
+                    width={505}
+                    height={800}
+                  />
+                </div>
+              )}
+            </div>
+
+            <div className="about-section3-card about-section3-card2">
+              {card2TitleEnglish && (
+                <div className="about-section3-content">
+                  {card2TitleEnglish && (
+                    <div className="title-box-about-section2">
+                      <h2>{card2TitleEnglish}</h2>
+                      <span className="design-line-box">
+                        <b className="designline1"></b>
+                        <b className="designline2"></b>
+                      </span>
+                    </div>
+                  )}
+                  <i className="divider"></i>
+                  <p>{card2Description1English}</p>
+                  <p>{card2Description2English}</p>
+                </div>
+              )}
+              {imageSrc2 && (
+                <div className="about-section3-image">
+                  <Image
+                    src={imageSrc2}
+                    alt={`${imageSrc2}`}
+                    width={505}
+                    height={800}
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

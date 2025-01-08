@@ -135,3 +135,33 @@
 .about-section2-form-preview-card-heading {
   @apply text-[2.125rem] leading-[2.35rem];
 }
+.about-section3-form-preview-box {
+  @apply flex flex-col gap-[12rem] mt-[4rem] items-start justify-between w-full bg-[#D9E9FF] px-[2rem] py-[4rem] rounded-[2.5rem];
+}
+.about-section3-card {
+  @apply flex items-start flex-row justify-between gap-[4rem] w-full;
+}
+.about-section3-card2 {
+  @apply flex-row-reverse;
+}
+.about-section3-content {
+  @apply flex flex-col gap-[3rem] w-[55%];
+}
+.about-section3-card2 .about-section3-content {
+  @apply items-end justify-start;
+}
+.about-section3-card2 .about-section3-content .title-box-about-section2 {
+  @apply items-end justify-start flex flex-col w-full relative right-0;
+}
+.divider {
+  @apply h-[0.125rem] bg-gray-400 w-full;
+}
+.about-section3-image {
+  @apply w-[505px] h-[800px];
+}
+.about-section3-image img {
+  @apply w-full h-full rounded-[2.5rem];
+}
+.about-section3-content p{
+  @apply text-[1.125rem];
+}
