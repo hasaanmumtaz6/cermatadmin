@@ -3,6 +3,7 @@ import Layout from "./components/Layout";
 import axios from "axios";
 import Image from "next/image";
 import { SiTicktick } from "react-icons/si";
+import { ImBin } from "react-icons/im";
 
 interface Banner {
   _id: string;
@@ -141,20 +142,108 @@ const About = () => {
       });
   }, [banner, section1, section2, section3, matrix]);
 
-  const handleDelete = async (careersId: string) => {
+  const handleBannerDelete = async (aboutbannerId: string) => {
     try {
       const response = await axios.delete(
-        `/api/careers?careersId=${careersId}`
+        `/api/aboutbanner?aboutbannerId=${aboutbannerId}`
       );
 
       if (response.status === 200) {
         setTimeout(() => {
-          setSuccessMessage("Careers Deleted successfully!");
+          setSuccessMessage("About Banner Deleted successfully!");
           setTimeout(() => setSuccessMessage(""), 5000);
         }, 1000);
         const audio = new Audio("/audio/notification.mp3");
         audio.play();
-        setBanner(banner.filter((item) => item._id !== careersId));
+        setBanner(banner.filter((item) => item._id !== aboutbannerId));
+      } else {
+        alert("Failed to delete item.");
+      }
+    } catch (error) {
+      console.error("Error deleting item:", error);
+      alert("An error occurred. Please try again.");
+    }
+  };
+  const handleSection1Delete = async (aboutsection1Id: string) => {
+    try {
+      const response = await axios.delete(
+        `/api/aboutsection1?aboutsection1Id=${aboutsection1Id}`
+      );
+
+      if (response.status === 200) {
+        setTimeout(() => {
+          setSuccessMessage("About Section 1 Deleted successfully!");
+          setTimeout(() => setSuccessMessage(""), 5000);
+        }, 1000);
+        const audio = new Audio("/audio/notification.mp3");
+        audio.play();
+        setSection1(section1.filter((item) => item._id !== aboutsection1Id));
+      } else {
+        alert("Failed to delete item.");
+      }
+    } catch (error) {
+      console.error("Error deleting item:", error);
+      alert("An error occurred. Please try again.");
+    }
+  };
+  const handleSection2Delete = async (aboutsection2Id: string) => {
+    try {
+      const response = await axios.delete(
+        `/api/aboutsection1?aboutsection1Id=${aboutsection2Id}`
+      );
+
+      if (response.status === 200) {
+        setTimeout(() => {
+          setSuccessMessage("About Section 2 Deleted successfully!");
+          setTimeout(() => setSuccessMessage(""), 5000);
+        }, 1000);
+        const audio = new Audio("/audio/notification.mp3");
+        audio.play();
+        setSection2(section2.filter((item) => item._id !== aboutsection2Id));
+      } else {
+        alert("Failed to delete item.");
+      }
+    } catch (error) {
+      console.error("Error deleting item:", error);
+      alert("An error occurred. Please try again.");
+    }
+  };
+  const handleSection3Delete = async (aboutsection3Id: string) => {
+    try {
+      const response = await axios.delete(
+        `/api/aboutsection1?aboutsection1Id=${aboutsection3Id}`
+      );
+
+      if (response.status === 200) {
+        setTimeout(() => {
+          setSuccessMessage("About Section 3 Deleted successfully!");
+          setTimeout(() => setSuccessMessage(""), 5000);
+        }, 1000);
+        const audio = new Audio("/audio/notification.mp3");
+        audio.play();
+        setSection3(section3.filter((item) => item._id !== aboutsection3Id));
+      } else {
+        alert("Failed to delete item.");
+      }
+    } catch (error) {
+      console.error("Error deleting item:", error);
+      alert("An error occurred. Please try again.");
+    }
+  };
+  const handleMatrixDelete = async (aboutmatrixId: string) => {
+    try {
+      const response = await axios.delete(
+        `/api/aboutmatrix?aboutmatrixId=${aboutmatrixId}`
+      );
+
+      if (response.status === 200) {
+        setTimeout(() => {
+          setSuccessMessage("About Matrix Deleted successfully!");
+          setTimeout(() => setSuccessMessage(""), 5000);
+        }, 1000);
+        const audio = new Audio("/audio/notification.mp3");
+        audio.play();
+        setMatrix(matrix.filter((item) => item._id !== aboutmatrixId));
       } else {
         alert("Failed to delete item.");
       }
@@ -180,17 +269,20 @@ const About = () => {
         <div className="about-box">
           {banner.map((Banner, index) => (
             <div
-              className="hero-banner-about-card-preview-box"
+              className="hero-banner-about-card-preview-box relative"
               key={index + Banner._id}
             >
               {Banner.bannerTitleEnglish && (
-                <div className="image-title-box-about-banner">
+                <div className="image-title-box-about-banner relative">
                   <Image
                     src={Banner.bannerImage}
                     alt={Banner.bannerImage}
                     width={100}
                     height={100}
                   />
+                  <div className="dl-btn">
+                    <ImBin onClick={() => handleBannerDelete(Banner._id)} />
+                  </div>
                   <h2 className="about-banner-title">
                     {Banner.bannerTitleEnglish}
                   </h2>
@@ -215,9 +307,12 @@ const About = () => {
 
           {section1.map((Section1, index) => (
             <div
-              className="about-section1-form-preview-box"
+              className="about-section1-form-preview-box relative"
               key={index + Section1._id}
             >
+              <div className="dl-btn">
+                <ImBin onClick={() => handleSection1Delete(Section1._id)} />
+              </div>
               {Section1.titleEnglish && (
                 <div className="content-box-about-section1">
                   <div className="title-box-about-section1">
@@ -247,9 +342,12 @@ const About = () => {
 
           {section2.map((Section2, index) => (
             <div
-              className="about-section2-form-preview-card"
+              className="about-section2-form-preview-card relative"
               key={index + Section2._id}
             >
+              <div className="dl-btn">
+                <ImBin onClick={() => handleSection2Delete(Section2._id)} />
+              </div>
               <h2 className="about-section2-form-preview-card-heading">
                 {Section2.headingEnglish}
               </h2>
@@ -269,7 +367,10 @@ const About = () => {
           ))}
 
           {section3.map((Section3, index) => (
-            <div key={index + Section3._id}>
+            <div key={index + Section3._id} className="relative">
+              <div className="dl-btn">
+                <ImBin onClick={() => handleSection3Delete(Section3._id)} />
+              </div>
               {Section3.card1TitleEnglish && (
                 <div className="about-section3-form-preview-box">
                   <div className="about-section3-card about-section3-card1">
@@ -337,9 +438,12 @@ const About = () => {
 
           {matrix.map((Matrix, index) => (
             <div
-              className="about-matrix-form-preview-box"
+              className="about-matrix-form-preview-box relative"
               key={index + Matrix._id}
             >
+              <div className="dl-btn">
+                <ImBin onClick={() => handleMatrixDelete(Matrix._id)} />
+              </div>
               <h2>{Matrix.headingEnglish}</h2>
               <div className="matrix-container">
                 <span>
