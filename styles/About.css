@@ -1,13 +1,15 @@
 .about-banner-container,
 .about-section1-container,
 .about-section2-container,
-.about-section3-container {
+.about-section3-container,
+.about-matrix-container {
   @apply w-full h-full px-[2rem] py-[1.5rem] overflow-scroll overflow-x-hidden;
 }
 .about-banner-container::-webkit-scrollbar,
 .about-section1-container::-webkit-scrollbar,
 .about-section2-container::-webkit-scrollbar,
-.about-section3-container::-webkit-scrollbar {
+.about-section3-container::-webkit-scrollbar,
+.about-matrix-container::-webkit-scrollbar {
   @apply w-0;
 }
 .about-banner-heading,
@@ -17,19 +19,23 @@
 .about-section2-heading,
 .about-section2-preview-heading,
 .about-section3-heading,
-.about-section3-form-preview-box-heading {
+.about-section3-form-preview-box-heading,
+.about-matrix-container-heading,
+.about-matrix-form-preview-heading {
   @apply w-full text-center text-2xl font-bold mt-[2rem];
 }
 .about-banner-form,
 .about-section1-form-box,
 .about-section2-form,
-.about-section3-form {
+.about-section3-form,
+.about-matrix-form {
   @apply w-full flex flex-col py-[2rem] items-center relative gap-[2rem];
 }
 .about-banner-form span,
 .about-section1-form-box span,
 .about-section2-form span,
-.about-section3-form span {
+.about-section3-form span,
+.about-matrix-form span {
   @apply w-full flex items-center relative gap-[2rem];
 }
 .about-banner-form input,
@@ -39,8 +45,13 @@
 .about-section2-form input,
 .about-section2-form textarea,
 .about-section3-form input,
-.about-section3-form textarea {
+.about-section3-form textarea,
+.about-matrix-form input,
+.about-matrix-form textarea {
   @apply w-[33.3%] border-[1px] border-gray-200 shadow-md outline-none shadow-gray-200 px-[2rem] py-[0.75rem] rounded-[0.5rem];
+}
+.matrix-number-input {
+  @apply !w-full;
 }
 .about-banner-form span label,
 .about-section1-form-box span label,
@@ -60,7 +71,8 @@
 .about-banner-form button,
 .about-section1-form-box button,
 .about-section2-form button,
-.about-section3-form button {
+.about-section3-form button,
+.about-matrix-form button {
   @apply w-fit text-[1rem] px-[2rem] py-[0.5rem] rounded-full font-bold;
   background: linear-gradient(
     110deg,
@@ -162,6 +174,21 @@
 .about-section3-image img {
   @apply w-full h-full rounded-[2.5rem];
 }
-.about-section3-content p{
+.about-section3-content p {
   @apply text-[1.125rem];
+}
+.about-matrix-form-preview-box {
+  @apply flex flex-col items-start justify-start w-full pt-[4rem] gap-[4rem];
+}
+.about-matrix-form-preview-box h2 {
+  @apply text-[3rem] leading-[3.25rem];
+}
+.matrix-container {
+  @apply flex items-start justify-between gap-[4rem] pt-[4rem];
+}
+.matrix-container span {
+  @apply flex flex-col gap-[2rem] w-[30%];
+}
+.matrix-container span h4 {
+  @apply text-[5rem] font-bold leading-[5.25rem];
 }
