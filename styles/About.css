@@ -1,3 +1,4 @@
+.About-container,
 .about-banner-container,
 .about-section1-container,
 .about-section2-container,
@@ -5,6 +6,7 @@
 .about-matrix-container {
   @apply w-full h-full px-[2rem] py-[1.5rem] overflow-scroll overflow-x-hidden;
 }
+.About-container::-webkit-scrollbar,
 .about-banner-container::-webkit-scrollbar,
 .about-section1-container::-webkit-scrollbar,
 .about-section2-container::-webkit-scrollbar,
