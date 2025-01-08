@@ -102,7 +102,7 @@ const About = () => {
         setBanner(res?.data);
       })
       .catch((error: string) => {
-        setIsError(`Error fetching product profits: ${error}`);
+        setIsError(`Error fetching Banner: ${error}`);
       });
 
     axios
@@ -111,7 +111,7 @@ const About = () => {
         setSection1(res?.data);
       })
       .catch((error: string) => {
-        setIsError(`Error fetching product profits: ${error}`);
+        setIsError(`Error fetching Section1: ${error}`);
       });
 
     axios
@@ -120,7 +120,7 @@ const About = () => {
         setSection2(res?.data);
       })
       .catch((error: string) => {
-        setIsError(`Error fetching product profits: ${error}`);
+        setIsError(`Error fetching Section2: ${error}`);
       });
 
     axios
@@ -129,7 +129,7 @@ const About = () => {
         setSection3(res?.data);
       })
       .catch((error: string) => {
-        setIsError(`Error fetching product profits: ${error}`);
+        setIsError(`Error fetching Section3: ${error}`);
       });
 
     axios
@@ -138,7 +138,7 @@ const About = () => {
         setMatrix(res?.data);
       })
       .catch((error: string) => {
-        setIsError(`Error fetching product profits: ${error}`);
+        setIsError(`Error fetching Matrix: ${error}`);
       });
   }, [banner, section1, section2, section3, matrix]);
 

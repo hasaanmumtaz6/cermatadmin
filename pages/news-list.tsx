@@ -38,7 +38,7 @@ const NewsList = () => {
         setNews(res?.data);
       })
       .catch((error: string) => {
-        setIsError(`Error fetching product profits: ${error}`);
+        setIsError(`Error fetching News: ${error}`);
       });
   }, []);
 

@@ -81,17 +81,17 @@ export default async function handle(
   if (method === "DELETE") {
     const { newsId } = req.query;
     if (!newsId) {
-      return res.status(400).json({ message: "Product ID is required." });
+      return res.status(400).json({ message: "News ID is required." });
     }
 
     try {
       const result = await News.findByIdAndDelete(newsId);
 
       if (!result) {
-        return res.status(404).json({ message: "Product not found." });
+        return res.status(404).json({ message: "News not found." });
       }
 
-      res.status(200).json({ message: "Product deleted successfully." });
+      res.status(200).json({ message: "News deleted successfully." });
     } catch (error) {
       res.status(500).json({ error: `Internal server error ${error}` });
     }

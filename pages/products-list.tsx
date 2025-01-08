@@ -27,7 +27,7 @@ const ProductsList = () => {
         setProduct(res?.data);
       })
       .catch((error: string) => {
-        setIsError(`Error fetching product profits: ${error}`);
+        setIsError(`Error fetching product: ${error}`);
       });
   }, []);
 

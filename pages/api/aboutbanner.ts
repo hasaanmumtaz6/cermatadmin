@@ -53,17 +53,17 @@ export default async function handle(
   if (method === "DELETE") {
     const { aboutbannerId } = req.query;
     if (!aboutbannerId) {
-      return res.status(400).json({ message: "Product ID is required." });
+      return res.status(400).json({ message: "Banner ID is required." });
     }
 
     try {
       const result = await AboutBanner.findByIdAndDelete(aboutbannerId);
 
       if (!result) {
-        return res.status(404).json({ message: "Product not found." });
+        return res.status(404).json({ message: "Banner not found." });
       }
 
-      res.status(200).json({ message: "Product deleted successfully." });
+      res.status(200).json({ message: "Banner deleted successfully." });
     } catch (error) {
       res.status(500).json({ error: `Internal server error ${error}` });
     }

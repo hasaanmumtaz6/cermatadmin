@@ -73,17 +73,17 @@ export default async function handle(
   if (method === "DELETE") {
     const { aboutsection3Id } = req.query;
     if (!aboutsection3Id) {
-      return res.status(400).json({ message: "Product ID is required." });
+      return res.status(400).json({ message: "Section 3 ID is required." });
     }
 
     try {
       const result = await AboutSection3.findByIdAndDelete(aboutsection3Id);
 
       if (!result) {
-        return res.status(404).json({ message: "Product not found." });
+        return res.status(404).json({ message: "Section 3 not found." });
       }
 
-      res.status(200).json({ message: "Product deleted successfully." });
+      res.status(200).json({ message: "Section 3 deleted successfully." });
     } catch (error) {
       res.status(500).json({ error: `Internal server error ${error}` });
     }
