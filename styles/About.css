@@ -1,29 +1,37 @@
 .about-banner-container,
-.about-section1-container {
+.about-section1-container,
+.about-section2-container {
   @apply w-full h-full px-[2rem] py-[1.5rem] overflow-scroll overflow-x-hidden;
 }
 .about-banner-container::-webkit-scrollbar,
-.about-section1-container::-webkit-scrollbar {
+.about-section1-container::-webkit-scrollbar,
+.about-section2-container::-webkit-scrollbar {
   @apply w-0;
 }
 .about-banner-heading,
 .about-banner-form-preview-heading,
 .about-section1-heading,
-.about-section1-preview-heading {
+.about-section1-preview-heading,
+.about-section2-heading,
+.about-section2-preview-heading {
   @apply w-full text-center text-2xl font-bold mt-[2rem];
 }
 .about-banner-form,
-.about-section1-form-box {
+.about-section1-form-box,
+.about-section2-form {
   @apply w-full flex flex-col py-[2rem] items-center relative gap-[2rem];
 }
 .about-banner-form span,
-.about-section1-form-box span {
+.about-section1-form-box span,
+.about-section2-form span {
   @apply w-full flex items-center relative gap-[2rem];
 }
 .about-banner-form input,
 .about-banner-form textarea,
 .about-section1-form-box input,
-.about-section1-form-box textarea {
+.about-section1-form-box textarea,
+.about-section2-form input,
+.about-section2-form textarea {
   @apply w-[33.3%] border-[1px] border-gray-200 shadow-md outline-none shadow-gray-200 px-[2rem] py-[0.75rem] rounded-[0.5rem];
 }
 .about-banner-form span label,
@@ -39,7 +47,8 @@
   @apply w-[4rem] h-[3rem] rounded-[0.5rem] border-none;
 }
 .about-banner-form button,
-.about-section1-form-box button {
+.about-section1-form-box button,
+.about-section2-form button {
   @apply w-fit text-[1rem] px-[2rem] py-[0.5rem] rounded-full font-bold;
   background: linear-gradient(
     110deg,
@@ -94,9 +103,23 @@
 .about-section1-description-box {
   @apply w-[40%];
 }
-.title-box-about-section1 {
+.title-box-about-section1,
+.title-box-about-section2 {
   @apply text-[5.125rem] leading-[5.25rem] font-bold text-gray-800;
 }
 .about-section1-description-box {
   @apply text-[1.25rem] leading-[1.75rem] text-gray-500;
+}
+.about-section2-form-preview-card {
+  @apply flex items-center flex-col gap-[2rem] justify-center w-full;
+}
+.description-title-box-about-section-2 {
+  @apply flex items-start justify-between w-full gap-[4rem];
+}
+.description-title-box-about-section-2 p,
+.description-title-box-about-section-2 div {
+  @apply w-[40%];
+}
+.about-section2-form-preview-card-heading {
+  @apply text-[2.125rem] leading-[2.35rem];
 }
