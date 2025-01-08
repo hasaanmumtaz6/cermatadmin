@@ -1,11 +1,13 @@
 .about-banner-container,
 .about-section1-container,
-.about-section2-container {
+.about-section2-container,
+.about-section3-container {
   @apply w-full h-full px-[2rem] py-[1.5rem] overflow-scroll overflow-x-hidden;
 }
 .about-banner-container::-webkit-scrollbar,
 .about-section1-container::-webkit-scrollbar,
-.about-section2-container::-webkit-scrollbar {
+.about-section2-container::-webkit-scrollbar,
+.about-section3-container::-webkit-scrollbar {
   @apply w-0;
 }
 .about-banner-heading,
@@ -13,17 +15,21 @@
 .about-section1-heading,
 .about-section1-preview-heading,
 .about-section2-heading,
-.about-section2-preview-heading {
+.about-section2-preview-heading,
+.about-section3-heading,
+.about-section3-form-preview-box-heading {
   @apply w-full text-center text-2xl font-bold mt-[2rem];
 }
 .about-banner-form,
 .about-section1-form-box,
-.about-section2-form {
+.about-section2-form,
+.about-section3-form {
   @apply w-full flex flex-col py-[2rem] items-center relative gap-[2rem];
 }
 .about-banner-form span,
 .about-section1-form-box span,
-.about-section2-form span {
+.about-section2-form span,
+.about-section3-form span {
   @apply w-full flex items-center relative gap-[2rem];
 }
 .about-banner-form input,
@@ -31,24 +37,30 @@
 .about-section1-form-box input,
 .about-section1-form-box textarea,
 .about-section2-form input,
-.about-section2-form textarea {
+.about-section2-form textarea,
+.about-section3-form input,
+.about-section3-form textarea {
   @apply w-[33.3%] border-[1px] border-gray-200 shadow-md outline-none shadow-gray-200 px-[2rem] py-[0.75rem] rounded-[0.5rem];
 }
 .about-banner-form span label,
-.about-section1-form-box span label {
+.about-section1-form-box span label,
+.about-section3-form span label {
   @apply w-full bg-[#fff] text-black text-[3rem] absolute left-0 text-center flex items-center justify-center rounded-[0.5rem] px-[2rem] py-[0.5rem] border-[1px] border-gray-200 shadow-md shadow-gray-200 gap-[2rem];
 }
 .about-banner-form span label p,
-.about-section1-form-box span label p {
+.about-section1-form-box span label p,
+.about-section3-form span label p {
   @apply text-[1.25rem] text-gray-400;
 }
 .about-banner-form span label img,
-.about-section1-form-box span label img {
+.about-section1-form-box span label img,
+.about-section3-form span label img {
   @apply w-[4rem] h-[3rem] rounded-[0.5rem] border-none;
 }
 .about-banner-form button,
 .about-section1-form-box button,
-.about-section2-form button {
+.about-section2-form button,
+.about-section3-form button {
   @apply w-fit text-[1rem] px-[2rem] py-[0.5rem] rounded-full font-bold;
   background: linear-gradient(
     110deg,

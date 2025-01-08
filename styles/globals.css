@@ -87,6 +87,9 @@ body {
   @apply pl-[2.75rem] text-[1.5rem];
 }
 /* Sidebar */
+.success-message {
+  @apply w-fit px-[2rem] py-[0.75rem] bg-[#295a0d] rounded-[0.5rem] text-white fixed z-[9999] top-[2rem] right-[2rem] flex items-center gap-[1.25rem] animate-pulse;
+}
 
 @media (max-width: 1820px) and (min-width: 1721px) {
   .tabs-sidebar-admin .tab-link {
